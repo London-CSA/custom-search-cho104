@@ -1,51 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
-        <title>[TITLE HERE]</title>
-		<link href="/static/style.css" rel="stylesheet"></head>
-		<script>
-			function toggleButton(){
-				if(document.getElementById("txtSearch").value == "")
-				{
-					document.getElementById("btnSearch").disabled = true;
-				}
-				else{
-					document.getElementById("btnSearch").disabled = false;
-				}
-			}
-
-			function getDate(){
-				// TBD display current date in the span tag with id="date" in web page footer
-				// hint: https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_current
-			}
-		</script>
+        <title>AP CSA Archive</title>
+		<link href="/static/style.css" rel="stylesheet">
+		<script src="/static/script.js"></script>
+	</head>
     <body onload="getDate()">
-			<div class="container">
-        <form autocomplete="off" action="https://www.google.com/search" method="get">
+	<div class="container">
+        <form id="searchForm" autocomplete="off" action="https://www.google.com/search" method="get">
 				<table>
-					<thead><tr><th>
-						[LOGO FOR SITE YOU ARE SEARCHING]
-					</th></tr></thead>
+					<thead>
+						<tr>
+							<th>
+								<img height="50px" src="static/ap.png" alt="AP Logo">&nbsp;Computer Science A
+							</th>
+						</tr>
+					</thead>
 					<tbody>
 					<tr>
 						<td>
-            <input name="q" id="txtSearch" type="text" placeholder="PLACEHOLDER HERE" onkeyup="toggleButton()">
-						<input type="hidden" name="q" value="[SITE SEARCH]">
-            <input type="submit" disabled value="Search" name="btnSearch" id="btnSearch">
+							<input name="q" class="search-input-section" id="txtSearch" type="text" placeholder="Search Collegeboard.org">
+							<input type="hidden" name="q" value="site:apcentral.collegeboard.org/media &quot;computer-science-a&quot;">
 						</td>
 					</tr>
 					<tr>
-						<td class="footer"><img height="14px" src="static/leaf.png">&nbsp;&nbsp;Carbon neutral since 2023</td>
-					</tr>
-					<tr>
-						<td class="footer">[LINK TO SITE YOU ARE SEARCHING]
-						&nbsp;|&nbsp;<span id="date">[JAVASCRIPT DATE HERE]</span>
+						<td class="footer">
+							<a href="https://apcentral.collegeboard.org">Visit Collegeboard.org</a>
+							&nbsp;|&nbsp;
+							<img height="14px" src="static/leaf.png">&nbsp;&nbsp;Carbon neutral since 2023
+							&nbsp;|&nbsp;
+							<span id="date"></span>
 						</td>
 					</tr>
 					</tbody>
 				</table>
         </form>
-			</div>
+	</div>
     </body>
 </html>
